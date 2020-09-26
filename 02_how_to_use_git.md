@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<<<<<<< HEAD aaaaaaaa
 <<<<<<< HEAD
 # Git
 
@@ -469,4 +469,5 @@ Changes not staged for commit: (commit 하기 위해 변화들이 stage에 추�
 
 
 > commit 한 후에는 다음 commit을 하기 전에 반드시 push 해야 한다. (X)
->>>>>>> 7f9ee4a74263a7db6d9968e231a8e1f274655240
+>
+> >>>>>> 7f9ee4a74263a7db6d9968e231a8e1f274655240
