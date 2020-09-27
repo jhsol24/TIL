@@ -1,5 +1,3 @@
-<<<<<<< HEAD aaaaaaaa
-<<<<<<< HEAD
 # Git
 
 - Source Code Management (SCM): 코드 관리 도구 (버전을 통해 관리)
