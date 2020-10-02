@@ -55,3 +55,5 @@ html파일에 앞뒤에
 {% endblock %}
 {% include 'footer.html' %}
 해줘야함
+
+클래스 만들고 애드민생성 해서 페이지에 생기나 확인
