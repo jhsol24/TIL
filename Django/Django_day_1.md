@@ -1,7 +1,6 @@
-# Django
-> 웹사이트를 개발하는 Python web framework 이다.
-## 1. Class Day 1
-### 요약
+# Django day 1
+## 요약
+
 > MVT 패턴에 대해 배우고 간단한 웹사이트 (`localhost:8000/hello/index`) 를 만들어봤다.
 >
 > MTV 패턴에 대한 설명 링크 (강사님 사용) : https://butter-shower.tistory.com/49
@@ -13,7 +12,7 @@
 > 2. Web client > Url conf > View > Template (html 로 표현된다) > Response to Web client
 > 3. Web client > Url conf > View > Model (.momels 사용) > Template > Response to Web client
 
-### 1-1. 오전 수업 - Web client > View > Web client
+### 1. Web client > View > Web client
 
 #### 사전 작업
 
@@ -46,7 +45,7 @@ python manage.py runserver # 이제 웹에 주소를 입력하면 내용 표시�
 
 
 
-### 1-2 오후 수업 - Template, Model 까지 적용시킨 과정
+### 2. Template, Model 까지 적용시킨 과정
 
 #### 사전 작업
 
@@ -82,6 +81,7 @@ python manage.py runserver # 이제 웹에 주소를 입력하면 내용 표시�
   - `success.html` 에는 login에 성공했을 시 나오는 `localhost:8000/hello/login` 페이지에 나올 결과를 입력한다.
 
 - Django administration 에서 TestUser 생성
+  
   - `localhost:8000/admin` 페이지에 접속해 helloApp에 Test user를 Add 한다.
 
 #### 적용
