@@ -6,7 +6,25 @@
 
 ### 프로젝트 생성 및 사전작업
 
-- Bbs
+- BbsApp 생성
+
+```
+>python manage.py startapp BbsApp
+```
+
+- `djangoWEB/urls.py` 에서 경로 설정 (=path 등록, View 생성)
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('hello/', include('helloApp.urls')),
+    path('polls/', include('PollsApp.urls')),
+    path('bbs/', include('BbsApp.urls')),			# path 추가
+]
+```
 
 
 
