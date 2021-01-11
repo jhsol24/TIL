@@ -1,3 +1,5 @@
+# 점수에 따른 등급 출력 문제
+
 score = int(input())
 
 if 90 <= score:
