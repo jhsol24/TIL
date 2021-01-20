@@ -1,5 +1,5 @@
 # 최단 경로 알고리즘
-# Floyd - Washall algorithm
+# Floyd - Warshall algorithm
 # 키 순서
 # https://www.acmicpc.net/problem/2458
 
