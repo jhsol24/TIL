@@ -33,6 +33,8 @@ for i in range(T):
             cnt += 1
         else:
             array[i] = AC(array[i], cnt)
+            if array[i] == 'error':
+                break
     if array[i] != 'error' and cnt % 2 == 1:
         array[i].reverse()
 
