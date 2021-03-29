@@ -6,7 +6,7 @@ import sys
 input = sys.stdin.readline
 INF = int(1e9)
 
-n, m = map(int(input().split()))
+n, m = map(int, input().split())
 # 시작 노드 번호 입력받기
 start = int(input())
 # 각 노드에 연결되어 있는 노드에 대한 정보를 담는 리스트를 만들기
