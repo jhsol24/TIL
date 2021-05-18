@@ -1,68 +1,66 @@
--- 테이블 생성
-CREATE TABLE HR.JOB_GRADES (
-GRADE_LEVEL VARCHAR(2) PRIMARY KEY,
-LOWEST_SAL  NUMBER(10),
-HIGHEST_SAL NUMBER(10) );
-
--- 테이블에 정보(자료) 입력
-INSERT INTO HR.JOB_GRADES VALUES ('A', 1000, 2999);
-INSERT INTO HR.JOB_GRADES VALUES ('B', 3000, 5999);
-INSERT INTO HR.JOB_GRADES VALUES ('C', 6000, 9999);
-INSERT INTO HR.JOB_GRADES VALUES ('D', 10000, 14999);
-INSERT INTO HR.JOB_GRADES VALUES ('E', 15000, 24999);
-INSERT INTO HR.JOB_GRADES VALUES ('F', 25000, 40000);
-COMMIT;
-
--- 현재 날짜 출력
-SELECT SYSDATE FROM DUAL;
-
--- 날짜 조건 다루기
-SELECT * FROM HR.EMPLOYEES
-WHERE HIRE_DATE >= TO_DATE('2008/01/01', 'YYYY/MM/DD');
-
-
---------------------------------------------------------------------------------
 -- 21.05.17
 -- 5-3. 그룹함수 사용 실습
 
 -- 사원의 입사일 중 가장 오래된 입사일, 가장 최근의 입사일 표시하세요.
-SELECT MIN(HIRE_DATE),
-       MAX(HIRE_DATE)
-       FROM HR.EMPLOYEES;
+SELECT MIN(hire_date),
+       MAX(hire_date)
+FROM   hr.employees;
 
 -- 회사의 모든 사원수, 커미션을 지급받는 사원수 표시하세요.
 SELECT COUNT(*) ALL_PERSONS,
-       COUNT(COMMISSION_PCT) COMM_PERSONS
-       FROM HR.EMPLOYEES;
+       COUNT(commission_pct) COMM_PERSONS
+FROM   hr.employees;
        -- COUNT(*) 함수에는 ALL/DISTINCT 키워드 사용 불가
 
 -- 사원이 근무하고 있는 부서의 개수, 근무 부서가 지정된 사원의 수를 구하세요.
-SELECT COUNT(DISTINCT DEPARTMENT_ID) DEPTS,
-       COUNT(ALL DEPARTMENT_ID) DEPT_PERSONS
-       FROM HR.EMPLOYEES;
+SELECT COUNT(DISTINCT department_id) DEPTS,
+       COUNT(ALL department_id) DEPT_PERSONS
+       FROM hr.employees;
        -- DEPARTMENT_ID IS NULL 인 행을 제외
 
 -- 커미션 지급받는 사원들의 커미션 평균, 전체 사원을 대상으로 한 커미션 평균을 구하세요.
-SELECT AVG(COMMISSION_PCT) COMM_AVG_COMM_PERSONS,
-       AVG(NVL(COMMISSION_PCT, 0)) COMM_AVG_ALL_PERSONS
-       FROM HR.EMPLOYEES;
+SELECT AVG(commission_pct) COMM_AVG_COMM_PERSONS,
+       AVG(NVL(commission_pct, 0)) COMM_AVG_ALL_PERSONS
+FROM   hr.employees;
 
 
 -- 5-6. HAVING 절 사용 실습
 
 -- JOB_ID 컬럼의 값에 REP 가 포함된 행들의 부서번호, 급여를 부서번호 순으로 출력하세요.
-SELECT DEPARTMENT_ID, SALARY
-FROM   HR.EMPLOYEE
-WHERE  JOB_ID LIKE '%REP%'
+SELECT   department_id, SALARY
+FROM     HR.EMPLOYEE
+WHERE    JOB_ID LIKE '%REP%'
 ORDER BY 1;
 
 -- JOB_ID 에 REP 가 포함된 사원에 대해서만 부서별 급여의 합계, 부서별 평균 급여,
+-- 부서별 근무 인원수를 구하세요.
+SELECT   department_id, SUM(salary), AVG(salary), count(*)
+FROM     hr.employees
+WHERE    job_id LIKE '%REP%'
+GROUP BY department_id
+HAVING   SUM(salary) > 7000
+ORDER BY 2;
 
 
+-- 5-7. GROUP 함수 중첩
 
+-- 부서별 임금의 합계 금액 중에서, 가장 큰 부서별 합계임금 값을 표시하세요.
+SELECT   MAX(SUM(salary)) AS RESULT
+FROM     hr.employees
+GROUP BY department_id;
 
+-- 입사일을 이용하여 1) 연도별 입사인원 2) 연도, 월별 입사인원을 표시하세요.
+-- 1)
+SELECT   TO_CHAR(hire_date, 'YYYY') AS HIRE_YEAR, COUNT(*) AS PERSONS
+FROM     hr.employees
+GROUP BY TO_CHAR(hire_date, 'YYYY')
+ORDER BY 1;
 
-
+-- 2)
+SELECT   TO_CHAR(hire_date, 'YYYYMM') AS HIRE_YEAR_MONTH, COUNT(*) AS PERSONS
+FROM     hr.employees
+GROUP BY TO_CHAR(hire_date, 'YYYYMM')
+ORDER BY 1;
 
 
 -- 6-2. EQUI-INNER JOIN
@@ -84,11 +82,12 @@ JOIN   hr.departments d ON (e.department_id = d.department_id)
 JOIN   hr.locations l ON (d.location_id = l.location_id)
 WHERE  e.employee_id IN (100, 150, 200);
 
-
-
-
-
-
+-- 6-6. EQUI-INNER JOIN USING 'USING'
+-- HR.EMPLOYEES 테이블과 HR.DEPARTMENTS 테이블로부터, 사원의 사번, 성과 사원이 근무하는
+-- 부서의 부서코드, 부서이름을 모든 사원에 대하여 표시하시오.
+SELECT e.employee_id, e.last_name, department_id, d.department_name
+FROM   hr.employees e INNER JOIN departments d
+USING (department_id);
 
 
 
