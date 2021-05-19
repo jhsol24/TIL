@@ -88,24 +88,3 @@ WHERE  e.employee_id IN (100, 150, 200);
 SELECT e.employee_id, e.last_name, department_id, d.department_name
 FROM   hr.employees e INNER JOIN departments d
 USING (department_id);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
