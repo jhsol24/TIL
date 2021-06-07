@@ -74,8 +74,38 @@ Map 자료형 종류로는 HashMap, LinkedHash Map, TreeMap 이 있다.
 
 **Java 에서 List 컬렉션의 종류로는 ArrayList, Vector, LinkedList 가 있다.**
 ArrayList 가 가장 많이 사용되고, Queue 자료구조를 사용할 때 LinkedList 를 사용한다.
+**List 컬렉션 인터페이스에는 객체를 추가(add), 검색(contain, get, size), 삭제(remove, clear) 기능의 메서드가 선언되어 있다.**
+그러므로 이를 상속해서 구현하는 클래스는 해당 기능을 오버라이드 해야한다.
 
-- 이 후 자세한 추가 공부 필요
+- **ArrayList 객체를 생성해서 객체를 추가, 검색, 삭제하는 과정을 보여주는 예제 코드**
+
+```java
+//String 객체를 관리하는 ArrayList 생성
+List<String> list = new ArrayList();
+
+//String 객체 저장
+list.add("Hello World");
+
+//null 저장
+list.add(null);
+
+//동일한 String 객체를 갖고 있는지 검색
+boolean isFindValue = list.contains("Hello World");
+
+//인덱스 값을 이용하여 객체 삭제
+list.remove(0);
+
+//List에 저장된 모든 객체를 얻어서 콘솔 창에 출력
+for (String value : list) {
+    System.out.print(value)
+}
+```
+
+#### 1) ArrayList
+
+#### 2) Vector
+
+#### 3) LinkedList
 
 
 
