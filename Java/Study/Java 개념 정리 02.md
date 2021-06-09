@@ -103,6 +103,66 @@ for (String value : list) {
 
 #### 1) ArrayList
 
+Java 에서 기본적으로 많이 사용되는 클래스.
+
+1. 생성
+
+   ArrayList를 사용하려면 먼저 ArrayList 객체를 만들어야 한다.
+
+   ```java
+   import java.util.ArrayList;		//import를 하고 사용한다.
+   import java.util.Iteratior;		//이후 반복문을 위한 import
+   
+   public class Main {
+       public static void main(String[] args) {
+           ArrayList<Integer> numbers = new ArrayList<>(); //numbers 리스트 생성
+       }
+   }
+   ```
+
+2. 추가/ 삭제/ 가져오기
+
+   ```java
+   //추가
+   numbers.add(10);
+   numbers.add(20);
+   numbers.add(30);
+   numbers.add(40);
+   
+   numbers.add(1, 50);		//index 1에 50이라는 element를 추가
+   
+   //삭제
+   numbers.remove(2);		//index 2의 element를 제거
+   
+   //가져오기
+   numbers.get(2); 	//index 2의 element를 가져옴
+   ```
+
+3. 반복
+
+   ```java
+   //Iterator 객체 생성
+   Iterator it<Integer> = numbers.iterator();
+   
+   //while문으로 반복하여 요소를 호출
+   //다음 값이 존재하는지에 대한 boolean 값을 호출하는 hasNext() 사용
+   while (it.hasNext()) {
+       System.out.println(it.next());
+   }
+   
+   //for문으로 반복하여 요소를 호출 (1)
+   for (int value : numbers) {
+       System.out.println(value);
+   }
+   
+   //for문으로 반복하여 요소를 호출 (2)
+   for (int i=0; i<numbers.size(); i++) {
+       System.out.println(numbers.get(i));
+   }
+   ```
+
+   
+
 #### 2) Vector
 
 #### 3) LinkedList
