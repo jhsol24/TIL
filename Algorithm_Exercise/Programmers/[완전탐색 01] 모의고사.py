@@ -12,9 +12,7 @@ def solution(answers):
     student1 = [1,2,3,4,5] * (num_ans//5 + 1)
     student2 = [2,1,2,3,2,4,2,5] * (num_ans//8 + 1)
     student3 = [3,3,1,1,2,2,4,4,5,5] * (num_ans//10 + 1)
-
     cnt1, cnt2, cnt3 = 0, 0, 0
-
     for i in range(len(answers)):
         if answers[i] == student1[i]:
             cnt1 += 1
@@ -25,7 +23,6 @@ def solution(answers):
 
     max_ans = max(cnt1, cnt2, cnt3)
     answer = []
-
     if cnt1 == max_ans:
         answer.append(1)
     if cnt2 == max_ans:
@@ -36,3 +33,30 @@ def solution(answers):
     return answer
 
 print(solution(answers))
+
+
+# 더 좋은 풀이
+def solution2(answers):
+    pattern1 = [1, 2, 3, 4, 5]
+    pattern2 = [2, 1, 2, 3, 2, 4, 2, 5]
+    pattern3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+
+    score = [0, 0, 0]
+
+    for idx, answer in enumerate(answers):
+        if answer == pattern1[idx%len(pattern1)]:
+            score[0] += 1
+        if answer == pattern2[idx%len(pattern2)]:
+            score[1] += 1
+        if answer == pattern3[idx%len(pattern3)]:
+            score[2] += 1
+
+    result = []
+
+    for idx, s in enumerate(score):
+        if s == max(score):
+            result.append(idx + 1)
+
+    return result
+
+print(solution2(answers))
