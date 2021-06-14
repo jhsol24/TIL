@@ -23,7 +23,32 @@ for num, name in zip(num, name):
 # print(dic)
 # {1: 'rose', 2: 'leonard', 3: 'wade', 4: 'jackson'}
 
+# 개수가 다른 경우 1
+A = ['a','b','b','c']
+B = ['a','b','c']
+zip_ex1 = list(zip(A, B))
 
+# 결과 1
+# print(zip_ex1)
+# [('a', 'a'), ('b', 'b'), ('b', 'c')]
+
+# 개수가 다른 경우 2
+C = ['a','b','c','c']
+D = ['a','b','c']
+zip_ex2 = list(zip(C, D))
+
+# 결과 2
+# print(zip_ex2)
+# [('a', 'a'), ('b', 'b'), ('c', 'c')]
+
+# 개수가 다른 경우 3
+E = ['a','b','c']
+F = ['a','b']
+zip_ex3 = list(zip(E, F))
+
+# 결과 3
+# print(zip_ex3)
+# [('a', 'a'), ('b', 'b')]
 
 # hash()
 # dict 값들을 빠르게 비교하기 위해 정수형 숫자를 반환한다.
