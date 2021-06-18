@@ -5,48 +5,85 @@
 
 
 
-##### Example
+### Example
 
+사용할 예시 dictionary
+
+```python
 dic = {'player':'Stephen', 'height':191}
+```
 
 
 
 ### Add
+```python
 dic['PPG'] = 31.9
 dic['APG'] = 9.8
-print("Add 'PPG','APG' :", dic)
+print(dic)
+```
+
+key 와 value 쌍이 추가된다.
+
+**Result**
+
+{'player': 'Stephen', 'height': 191, 'PPG': 31.9, 'APG': 9.8}
 
 
 
 ### Delete
+```python
 del dic['height']
-print("Delete 'height' :", dic)
+print(dic)
+```
+
+지정한 key 의 key-value 쌍이 삭제된다.
+
+**Result**
+
+{'player': 'Stephen', 'PPG': 31.9, 'APG': 9.8}
 
 
 
 ### Get Value using Key
+```python
 print("Value of Key 'player' :", dic['player'])
+```
+
+
 
 
 
 ### Key list (keys)
+```python
 list_of_keys = dic.keys()
-print("List of keys :", list_of_keys)
+print(list_of_keys)
+```
+
+
 
 
 
 ### Value list (values)
+```python
 list_of_values = dic.values()
-print("List of values :", list_of_values)
+print(list_of_values)
+```
+
+
 
 
 
 ### Key, Value list (items)
-print("dic.items() :", dic.items())
+```python
+print(dic.items())
+```
 
 
 
 ### Sort by key
 
+```python
 sort_dic = sorted(dic.keys())
 print("Sorted by key :", sort_dic)
+```
+
