@@ -17,12 +17,14 @@ dic = {'player':'Stephen', 'height':191}
 
 ### Add
 ```python
+# dic[key] = value
+
 dic['PPG'] = 31.9
 dic['APG'] = 9.8
 print(dic)
 ```
 
-key 와 value 쌍이 추가된다.
+key-value 쌍이 추가된다.
 
 **Result**
 
@@ -32,6 +34,8 @@ key 와 value 쌍이 추가된다.
 
 ### Delete
 ```python
+# del dic[key]
+
 del dic['height']
 print(dic)
 ```
@@ -44,46 +48,76 @@ print(dic)
 
 
 
-### Get Value using Key
+### Key 를 사용해 Value 얻기
 ```python
-print("Value of Key 'player' :", dic['player'])
+# dic[key]
+
+print(dic['player'])
 ```
 
+value 값을 얻기 위한 가장 기본적인 형태이다.
+
+**Result**
+
+Stephen
 
 
 
-
-### Key list (keys)
+### Key 들을 List 로 반환
 ```python
-list_of_keys = dic.keys()
-print(list_of_keys)
+# dic.keys()
+
+print(dic.keys())
 ```
 
+key 를 list 로 만들어준다. key 값들만 사용할 때 유용하다.
+
+**Result**
+
+dict_keys(['player', 'PPG', 'APG'])
 
 
 
-
-### Value list (values)
+### Value 를 List 로 반환
 ```python
-list_of_values = dic.values()
-print(list_of_values)
+# dic.values()
+
+print(dic.values())
 ```
 
+value 를 list 로 만들어준다. value 값들만 사용할 때 유용하다.
+
+**Result**
+
+dict_values(['Stephen', 31.9, 9.8])
 
 
 
-
-### Key, Value list (items)
+### Key, Value 를 List 로 반환
 ```python
+# dic.items()
+
 print(dic.items())
 ```
 
+key-value 쌍을 list 로 만들어준다.
+
+**Result**
+
+dict_items([('player', 'Stephen'), ('PPG', 31.9), ('APG', 9.8)])
 
 
-### Sort by key
+
+### Key 를 기준으로 정렬된 List 의 Value 반환
 
 ```python
-sort_dic = sorted(dic.keys())
-print("Sorted by key :", sort_dic)
+# sorted(dic.keys())
+
+print(sorted(dic.keys()))
 ```
 
+key 를 기준으로 정렬된 list 의 value 를 반환한다.
+
+**Result**
+
+['APG', 'PPG', 'player']
