@@ -5,6 +5,8 @@
 
 
 
+
+
 ### Example
 
 사용할 예시 dictionary
@@ -12,6 +14,8 @@
 ```python
 dic = {'player':'Stephen', 'height':191}
 ```
+
+
 
 
 
@@ -28,11 +32,15 @@ key-value 쌍이 추가된다.
 
 **Result**
 
+```python
 {'player': 'Stephen', 'height': 191, 'PPG': 31.9, 'APG': 9.8}
+```
 
 
 
-### Delete
+
+
+### Delete (del)
 ```python
 # del dic[key]
 
@@ -44,7 +52,11 @@ print(dic)
 
 **Result**
 
+```python
 {'player': 'Stephen', 'PPG': 31.9, 'APG': 9.8}
+```
+
+
 
 
 
@@ -59,11 +71,15 @@ value 값을 얻기 위한 가장 기본적인 형태이다.
 
 **Result**
 
+```python
 Stephen
+```
 
 
 
-### Key 들을 List 로 반환
+
+
+### Key 들을 List 로 반환 (keys)
 ```python
 # dic.keys()
 
@@ -74,11 +90,15 @@ key 를 list 로 만들어준다. key 값들만 사용할 때 유용하다.
 
 **Result**
 
+```python
 dict_keys(['player', 'PPG', 'APG'])
+```
 
 
 
-### Value 를 List 로 반환
+
+
+### Value 를 List 로 반환 (values)
 ```python
 # dic.values()
 
@@ -89,11 +109,15 @@ value 를 list 로 만들어준다. value 값들만 사용할 때 유용하다.
 
 **Result**
 
+```python
 dict_values(['Stephen', 31.9, 9.8])
+```
 
 
 
-### Key, Value 를 List 로 반환
+
+
+### Key, Value 를 List 로 반환 (items)
 ```python
 # dic.items()
 
@@ -104,7 +128,11 @@ key-value 쌍을 list 로 만들어준다.
 
 **Result**
 
+```python
 dict_items([('player', 'Stephen'), ('PPG', 31.9), ('APG', 9.8)])
+```
+
+
 
 
 
@@ -120,4 +148,7 @@ key 를 기준으로 정렬된 list 의 value 를 반환한다.
 
 **Result**
 
+```python
 ['APG', 'PPG', 'player']
+```
+
