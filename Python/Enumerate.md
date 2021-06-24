@@ -6,7 +6,7 @@
 
 
 
-### 기본 형태
+## 1. 기본 형태
 
 ```python
 array = [1, 3, 7, 11, 23, 33, 45]
@@ -14,6 +14,8 @@ array = [1, 3, 7, 11, 23, 33, 45]
 for i in enumerate(array):
     print(i)
 ```
+
+
 
 **Result**
 
@@ -31,7 +33,8 @@ for i in enumerate(array):
 
 
 
-### enumerate 원리
+## 2. enumerate 원리
+
 내부적으로 next() 함수를 호출하고 있다고 볼 수 있다.
 
 ```python
@@ -39,6 +42,8 @@ list_enum = list(enumerate(['A', 'B', 'C']))
 
 print(list_enum)
 ```
+
+
 
 **Result**
 
@@ -50,13 +55,16 @@ print(list_enum)
 
 
 
-### 문자열도 사용 가능
+## 3. 문자열도 사용 가능
+
 ```python
 string = ['james', 'curry', 'harden', 'durant', 'jokic']
 
 for i in enumerate(string):
     print(i)
 ```
+
+
 
 **Result**
 
@@ -72,7 +80,7 @@ for i in enumerate(string):
 
 
 
-### *tuple 형태 반환을 이용한 활용*
+## 4. *tuple 형태 반환을 이용한 활용*
 
 index 와 값을 tuple 형태로 반환해 hash 형식으로 이용할 수 있다.
 
@@ -82,6 +90,8 @@ index 와 값을 tuple 형태로 반환해 hash 형식으로 이용할 수 있�
 for i, j in enumerate(array):
     print("index : {}, value : {}".format(i, j))
 ```
+
+
 
 **Result**
 
@@ -99,7 +109,7 @@ index : 6, value : 45
 
 
 
-### 시작 인덱스 바꾸기
+## 5. 시작 인덱스 바꾸기
 
 `start=숫자` 를 이용해 시작점을 지정할 수 있다.
 
@@ -107,6 +117,8 @@ index : 6, value : 45
 for i, j in enumerate(array, start=10):
     print(i, j)
 ```
+
+
 
 **Result**
 
