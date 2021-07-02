@@ -154,7 +154,7 @@ dict_items([('player', 'Stephen'), ('PPG', 31.9), ('APG', 9.8)])
 
 
 
-## 3. Key 를 기준으로 정렬된 List 의 Value 반환
+## 8. 만들어진 리스트를 정렬
 
 ```python
 # sorted(dic.keys())
@@ -162,7 +162,7 @@ dict_items([('player', 'Stephen'), ('PPG', 31.9), ('APG', 9.8)])
 print(sorted(dic.keys()))
 ```
 
-key 를 기준으로 정렬된 list 의 value 를 반환한다.
+key, value 를 리스트로 만들고 정렬도 가능하다.
 
 
 
