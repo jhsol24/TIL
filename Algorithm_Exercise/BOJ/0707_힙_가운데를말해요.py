@@ -18,6 +18,4 @@ for k in range(N):
     print(answer[k])
 
 
-# 시간초과로 실패
-# 힙 자료구조를 써야한다
 # 다시 풀기
