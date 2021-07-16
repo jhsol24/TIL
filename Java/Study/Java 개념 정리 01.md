@@ -72,17 +72,8 @@
 
 
 
-### 4. CRUD
-
-- CREATE, READ(SELECT), UPDATE, DELETE
-
-
-
-### 5. JSP (Java Server Pages)
+### 4. JSP (Java Server Pages)
 
 **HTML 코드에 JAVA 코드를 넣어 동적 웹페이지를 생성하는 웹어플리케이션 도구**
 
 - 실행되면 Servlet으로 변환되며 WAS에서 동작되면서 필요한 기능을 수행하고 생성된 데이터를 웹페이지와 함께 클라이언트로 응답한다.
-
-
-
